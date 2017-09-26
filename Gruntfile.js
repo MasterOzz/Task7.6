@@ -19,14 +19,14 @@ module.exports = function(grunt) {
   				expand: true,
   				cwd: 'images/',
   				src: ['**/*.{png,jpg,gif}'],
-  				dest: 'images/build/'
+  				dest: 'build/'
   			}]
   		}
   	},
 
 	watch: {
     	    scripts: {
-                  files: ['sass/*.sass'],
+                  files: ['index.html'],
                   tasks: ['sass'],
                   options: {
                       spawn: false,
@@ -42,5 +42,5 @@ module.exports = function(grunt) {
 
   // Default task(s).
 
-  grunt.registerTask('default', ['sass', 'imagemin']);
+  grunt.registerTask('default', ['sass', 'imagemin', 'watch']);
 };
